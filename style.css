@@ -1,0 +1,760 @@
+body, p, h1, h2, h3, h4, h5, h6, ul, figure, blockquote, ol, li{margin: 0;}
+
+img {max-width: 100%; height: auto;display: block;}
+
+*{box-sizing: border-box;}
+
+input[type=text] {width: 100%;outline: none;}
+
+button {border: none;padding: 0;}
+
+ul, ol {padding: 0;list-style: none;}
+
+a, a:hover{text-decoration: none;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+
+
+
+textarea {
+    resize: vertical;
+}
+
+:root {
+    --amarillo: #d1b865;
+}
+
+
+.overflow {
+    overflow: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/*CABECERA*/
+
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: -webkit-fill-available;
+    align-items: center;
+    margin: 15px;
+}
+
+.cabecera-burguer {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.cabecera-burguer > div {
+    width: 40px;
+    height: 9px;
+    border-radius: 2px;
+    background-color: white;
+}
+
+.cabecera-burguer > div:first-child,
+.cabecera-burguer > div:last-child {
+    transition: transform 0.5s;
+ }
+
+.palouno {
+  transform: translateY(17px);
+}
+
+.palotres {
+  transform: translateY(-14px);
+}
+
+.cabecera-nav {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 998;
+    transform: translateX(992px);
+}
+
+.cabecera-nav-abierto {
+    transform: translatex(0);
+}
+
+.menu-item {
+    padding: 20px 0;
+    border-top: 5px solid var(--amarillo);
+    text-align: center;
+}
+
+.menu-item:first-of-type {
+    border-top: none;
+}
+
+.menu-enlace {
+    font-family: 'Roboto';
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 35px;
+    color: white;
+}
+
+.menu-enlace:hover,
+.menu-enlace:active {
+    color: var(--amarillo);
+}
+
+h1 a {
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Impact', arial;
+    z-index: 999;
+    position: relative;
+}
+
+.hero {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.50);
+}
+
+.hero img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.contenido-hero {
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    margin: 0 40px;
+    position: relative;
+    height: 85%;
+}
+
+.titulo-hero {
+    font-size: 40px;
+    color: var(--amarillo);
+    font-weight: bold;
+    font-family: 'Impact', arial;
+    position: relative;
+    margin: 0;
+}
+
+.titulo-borde {
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+    margin: -25px 0px 0px 60px;
+}
+
+.titulo-borde-oscuro {
+    -webkit-text-stroke: 1px #212121;
+    color: transparent;
+    margin: -25px 0px 0px 60px;
+}
+
+.divisor {
+    display: none;
+}
+
+.botones-hero {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.boton-hero {
+    width: 120px;
+    height: 45px;
+    background-color: var(--amarillo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--amarillo);
+    text-decoration: none;
+    color: #212121;
+    font-family: 'Roboto';
+    font-weight: 700;
+}
+
+.boton-hero:hover {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+}
+
+
+
+.texto-hero {
+    font-family: 'Roboto';
+    font-size: 17px;
+    line-height: 25px;
+    color: white;
+}
+
+.espatula {
+    width: 100px;
+    height: 100px;
+    z-index: 997;
+    position: relative;
+    color: white;
+    width: 100px;
+}
+
+.espatula img {
+    object-fit: contain;
+}
+
+.separador {
+    height: 600px;
+    width: 116%;
+    background-color: #212121;
+    transform: rotate(3deg);
+    margin-top: -25px;
+    margin-left: -35px;
+    position: absolute;
+}
+
+.contenedor {
+    margin: 15px;
+    position: relative;
+}
+
+
+.carta {
+    display: grid;
+    justify-content: center;
+    align-items: flex-end;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 50% 25%;
+    grid-gap: 15px;
+}
+
+.titulo-carta {
+    grid-column-start: 2;
+}
+
+.imagen-carta {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    align-self: start;
+    margin-top: 25px;
+    border-radius: 10px;
+}
+
+p.texto-carta {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    color: white;
+    font-family: 'Roboto';
+}
+
+.carta .boton-hero {
+    justify-self: center;
+}
+
+.galeria {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 15px 15px;
+    margin-top: 20px;
+}
+
+.galeria img {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+}
+
+.contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.contacto-izquierda {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contacto-lista {
+    margin: 20px;
+}
+
+ol.contacto-lista li {
+    list-style: square;
+}
+
+ol.contacto-lista a {
+    color: #212121;
+    font-family: 'Roboto';
+    font-weight: 700;
+    margin: 15px 0;
+    display: block;
+}
+
+.reseñas {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.reseñas a {
+    width: 150px;
+    height: 100px;
+    background: #212121;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px 0px rgb(0 0 0 / 50%);
+    border-radius: 5px;
+}
+
+.reseñas a:hover {
+    background: white;
+}
+
+.reseñas-imagen {
+    position: relative;
+}
+
+.reseñas-imagen span {
+    display: none;
+    width: 100%;
+    position: absolute;
+    padding: inherit;
+}
+
+.google {
+    padding: 25px;
+}
+
+.tripadvisor {
+    padding: 15px;
+}
+
+.reseñas-imagen:hover span {
+    display: block;
+}
+
+.formulario {
+    margin: 60px 0;
+}
+
+.formulario > * {
+    border: 3px solid #212121;
+    width: 100%;
+    height: 55px;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+.formulario > *:hover,
+.formulario > *:focus {
+    border-color: var(--amarillo);
+}
+
+a.boton-contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 700;
+    background-color: var(--amarillo);
+    border-color: var(--amarillo);
+}
+
+a.boton-contacto:hover,
+a.boton-contacto:focus {
+    background-color: #212121;
+    border-color: #212121;
+}
+
+.formulario input,
+.formulario textarea {
+    font-family: 'Roboto';
+    font-size: 16px;
+    color: rgb(33 33 33 / 50%);
+    padding: 15px;
+}
+
+
+footer {
+    padding: 30px;
+    background-color: #212121;
+}
+
+.enlaces-footer li a {
+    color: white;
+    font-family: 'Roboto';
+    margin: 10px 0;
+    display: block;
+    text-align: center;
+}
+
+.enlaces-footer li a:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.enlaces-footer {
+    margin-bottom: 30px;
+}
+
+.copyright li {
+    color: rgb(255 255 255 / 70%);
+    font-family: 'Roboto';
+    text-align: center;
+    font-size: 12px;
+}
+
+
+
+/*********** TABLET *********/
+
+@media (min-width:768px){
+
+    .hero {
+        height: 60vh;
+        align-items: center;
+    }
+    
+    .titulo-hero {
+        font-size: 52px;
+    }
+
+    .contenido-hero {
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 60%;
+    }
+
+    .bloque-titulo-hero {
+        flex: 0 0 40%;
+    }
+
+    .divisor {
+        display: block;
+        background-color: white;
+        width: 3px;
+        height: 100px;
+    }
+
+    .bloque-texto {
+        flex: 0 0 40%;
+    }
+
+    .texto-hero {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .espatula {
+        flex: 0 0 100%;
+    }
+
+
+
+    .separador {
+        height: 800px;
+    }
+
+
+
+    .contenedor {
+        padding: 30px;
+    }
+
+    .carta {
+        grid-template-columns: 50% auto;
+        margin: 60px 0;
+    }
+
+    .imagen-carta {
+        grid-row-end: 4;
+        padding-right: 60px;
+    }
+
+    p.texto-carta {
+        margin: auto;
+    }
+
+    .carta .boton-hero {
+        justify-self: left;
+    }
+
+
+
+
+    .titulo-galeria {
+        margin: 100px 0 40px 0;
+    }
+
+    .galeria {
+    grid-template-columns: 1fr 1fr 1fr;
+    }
+
+
+
+
+    .contacto {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: stretch;
+        margin: 60px 0;
+    }
+
+    .titulo-contacto {
+        flex: 0 0 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .contacto-izquierda {
+        flex: 0 0 45%;
+        justify-content: space-between;
+    }
+
+    .contacto-lista {
+        margin: 0 20px;
+    }
+
+    .formulario {
+        margin: 0;
+        flex: 0 0 45%;
+    }
+
+    a.boton-contacto{
+        margin: 0;
+    }
+
+
+
+    .enlaces-footer ol {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .enlaces-footer li {
+        flex: 0 0 50%;
+    }
+
+
+
+
+
+}
+
+
+
+
+
+/******* ESCRITORIO *******/
+
+@media (min-width:992px){
+
+
+
+    .hero {
+        height: 90vh;
+        align-items: flex-end;
+    }
+
+    .contenido-hero {
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 80%;
+        max-width: 1200px;
+        justify-content: space-between;
+    }
+
+    .cabecera-contenedor {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1300px;
+        margin: auto;
+    }
+
+    .cabecera-burguer {
+        display: none;
+    }
+
+    .cabecera-nav {
+        transform: none;
+        width: auto;
+        height: auto;
+        position: initial;
+        background: none;
+        padding: 10px 0;
+    }
+
+    li.menu-item {
+        display: inline-block;
+        padding: 0;
+        border: none;
+    }
+
+    .menu-enlace {
+        text-transform: capitalize;
+        margin: 15px;
+        font-size: 22px;
+        font-weight: 400;
+        border-bottom: 3px solid transparent;
+        transition: 0.5s;
+    }
+
+    .menu-enlace:hover, .menu-enlace:active {
+        border-color: var(--amarillo);
+        color: white;
+    }
+
+
+
+    .separador {
+        margin-top: -50px;
+        height: 900px;
+    }
+
+
+    .contenedor {
+        margin: 30px auto;
+        max-width: 1200px;
+    }
+
+
+    .imagen-carta {
+        margin: 0;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    p.texto-carta {
+        margin: auto;
+        margin-right: 200px;
+    }
+
+
+}
+
+
+
+
+/******* ESCRITORIO GRANDE *******/
+
+@media (min-width:1400px){
+
+
+    .bloque-titulo-hero .titulo-hero {
+        font-size: 88px;
+    }
+
+    .titulo-hero {
+        font-size: 75px;
+    }
+
+    .titulo-borde {
+        margin: -50px 0px 0px 60px;
+    }
+
+    .titulo-borde-oscuro {
+        margin: -50px 0px 0px 60px;
+    }
+
+    .divisor {
+        width: 5px;
+        height: 200px;
+    }
+
+    .texto-hero {
+        font-size: 25px;
+        line-height: 35px;
+    }
+
+    .botones-hero {
+        justify-content: flex-start;
+    }
+
+    .boton-hero:first-of-type{
+        margin-right: 50px;
+    }
+
+    .separador {
+        margin-top: -80px;
+        height: 1200px;
+    }
+
+    .imagen-carta {
+        margin: 0;
+        height: 108%;
+        object-fit: cover;
+        align-self: flex-end;
+    }
+
+    p.texto-carta {
+        margin: auto;
+        margin-right: 150px;
+        font-size: 25px;
+        line-height: 26px;
+    }
+
+
+
+    .tripadvisor {
+        margin-right: 150px;
+    }
+
+
+
+    .enlaces-footer ol {
+        max-width: 800px;
+        margin: auto;
+    }
+
+
+
+}
